@@ -17,9 +17,8 @@ persist.vendor.dpm.feature=1
 persist.vendor.dpm.loglevel=0
 persist.vendor.dpm.nsrm.bkg.evt=3955
 
-# Enable blurs, hidden under dev option
+# Enable blurs
 ro.surface_flinger.supports_background_blur=1
-persist.sys.sf.disable_blurs=1
 ro.sf.blurs_are_expensive=1
 
 # lmkd
