@@ -22,3 +22,5 @@ libqti-perfd-client.so
 libsdsprpc.so
 libVDClearShot.so
 libVDSuperPhotoAPI.so
+libprotobuf-cpp-full.so
+libprotobuf-cpp-lite.so
