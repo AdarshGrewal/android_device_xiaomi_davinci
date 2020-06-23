@@ -626,4 +626,6 @@
     <!-- Disable SBC HD audio dual channel support by default -->
     <bool name="config_enableSBCDualChannelAudio">false</bool>
         
+    <!-- Whether device has a screen with a higher aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
 </resources>
