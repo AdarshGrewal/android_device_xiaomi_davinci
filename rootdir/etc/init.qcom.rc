@@ -132,6 +132,10 @@ on boot
 
     # Sensors log dir
     mkdir /data/vendor/sensors 0770 system system
+    
+    # FPS Info
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
 on post-fs-data
     # Create directory used by display clients
