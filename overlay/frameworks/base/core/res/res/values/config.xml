@@ -610,4 +610,10 @@
     
     <!-- Whether the device has a popup camera -->
     <bool name="config_hasPopupCamera">true</bool>
+     
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_supportSmartPixels">true</bool>
+
+    <!-- Enable face auth when swiping security view -->
+    <bool name="config_faceAuthOnSecurityView">false</bool>
 </resources>
