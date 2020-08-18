@@ -20,4 +20,7 @@
 
     <!-- Color of the FOD view -->
     <color name="config_fodColor">#00ffffff</color>
+
+    <!-- the padding on the start and the end of the statusbar -->
+    <dimen name="status_bar_extra_padding">4dp</dimen>
 </resources>
