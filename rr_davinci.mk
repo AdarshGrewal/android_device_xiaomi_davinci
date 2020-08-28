@@ -27,6 +27,9 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_HAS_FOD := true
 RR_BUILDTYPE := Official
 
+# Inherit OPScreen Recorder
+$(call inherit-product-if-exists, vendor/apps/OPScreenRecord/config.mk)
+
 PRODUCT_NAME := rr_davinci
 PRODUCT_DEVICE := davinci
 PRODUCT_BRAND := Xiaomi
