@@ -88,6 +88,7 @@ vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
 
 # Camera
 lib/libcameraservice.so
+lib64/libarc_layer_sgl.so
 lib64/libcameraservice.so
 lib64/libOpenCL.so
 vendor/bin/remosaic_daemon
