@@ -395,7 +395,6 @@ product/framework/dpmapi.jar
 product/lib64/com.qualcomm.qti.dpm.api@1.0.so
 product/lib64/libdpmctmgr.so
 product/lib64/libdpmfdmgr.so
-product/lib64/libdpmframework.so
 product/lib64/libdpmtcm.so
 -product/priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/bin/dpmQmiMgr
@@ -418,6 +417,9 @@ vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
 vendor/lib64/libssd.so
+
+# DPM - from oneplus8 - qssi-user-11-RP1A.201005.001-2009051300-release-keys
+system_ext/lib64/libdpmframework.so
 
 # DRM widevine - from Mi 9T Pro QKQ1.190825.002 V11.0.8.0.QFKCNXM
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec050afab5c64b9f87
