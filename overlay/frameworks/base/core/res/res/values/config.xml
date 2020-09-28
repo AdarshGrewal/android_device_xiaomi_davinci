@@ -607,4 +607,7 @@
     <integer-array name="config_keyboardTapVibePattern">
         <item>10</item>
     </integer-array>
+    
+    <!-- Whether the device has a popup camera -->
+    <bool name="config_hasPopupCamera">true</bool>
 </resources>
