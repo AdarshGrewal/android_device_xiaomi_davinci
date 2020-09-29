@@ -53,9 +53,11 @@ on init
 
 on init && property:ro.boot.hwc=GLOBAL
     setprop ro.boot.product.hardware.sku davinci
+    start nqnfc_1_2_hal_service 
 
 on init && property:ro.boot.hwc=CN
     setprop ro.boot.product.hardware.sku davinci
+    start nqnfc_1_2_hal_service
 
 on fs
     mount_all /vendor/etc/fstab.qcom --early
@@ -144,6 +146,12 @@ on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
     swapon_all /vendor/etc/fstab.qcom
     write /proc/sys/vm/swappiness 100
+
+service nqnfc_1_2_hal_service /vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
+    class hal
+    user nfc
+    group nfc
+    disabled
 
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
