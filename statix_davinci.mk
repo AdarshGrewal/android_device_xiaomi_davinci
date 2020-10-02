@@ -24,6 +24,7 @@ $(call inherit-product, device/xiaomi/davinci/device.mk)
 # Inherit some common StatixOS stuff.
 $(call inherit-product, vendor/statix/config/common.mk)
 $(call inherit-product, vendor/statix/config/gsm.mk)
+TARGET_USES_BLUR := true
 
 PRODUCT_NAME := statix_davinci
 PRODUCT_DEVICE := davinci
