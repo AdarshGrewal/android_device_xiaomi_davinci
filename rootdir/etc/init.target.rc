@@ -53,11 +53,11 @@ on init
 
 on init && property:ro.boot.hwc=GLOBAL
     setprop ro.boot.product.hardware.sku davinci
-    start nqnfc_1_2_hal_service 
+    enable nqnfc_1_2_hal_service 
 
 on init && property:ro.boot.hwc=CN
     setprop ro.boot.product.hardware.sku davinci
-    start nqnfc_1_2_hal_service
+    enable nqnfc_1_2_hal_service
 
 on fs
     mount_all /vendor/etc/fstab.qcom --early
