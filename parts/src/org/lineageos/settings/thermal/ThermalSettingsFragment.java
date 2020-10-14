@@ -51,7 +51,6 @@ import java.util.Map;
 
 public class ThermalSettingsFragment extends PreferenceFragment
         implements AdapterView.OnItemClickListener, ApplicationsState.Callbacks {
-
     private AllPackagesAdapter mAllPackagesAdapter;
     private ApplicationsState mApplicationsState;
     private ApplicationsState.Session mSession;
@@ -64,8 +63,7 @@ public class ThermalSettingsFragment extends PreferenceFragment
     private ThermalUtils mThermalUtils;
 
     @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-    }
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,8 +90,8 @@ public class ThermalSettingsFragment extends PreferenceFragment
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+    public View onCreateView(
+            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.thermal_layout, container, false);
     }
 
@@ -110,7 +108,6 @@ public class ThermalSettingsFragment extends PreferenceFragment
         mUserListView.setAdapter(mAllPackagesAdapter);
         mUserListView.setOnItemClickListener(this);
     }
-
 
     @Override
     public void onResume() {
@@ -154,24 +151,19 @@ public class ThermalSettingsFragment extends PreferenceFragment
     }
 
     @Override
-    public void onAllSizesComputed() {
-    }
+    public void onAllSizesComputed() {}
 
     @Override
-    public void onLauncherInfoChanged() {
-    }
+    public void onLauncherInfoChanged() {}
 
     @Override
-    public void onPackageIconChanged() {
-    }
+    public void onPackageIconChanged() {}
 
     @Override
-    public void onPackageSizeChanged(String packageName) {
-    }
+    public void onPackageSizeChanged(String packageName) {}
 
     @Override
-    public void onRunningStateChanged(boolean running) {
-    }
+    public void onRunningStateChanged(boolean running) {}
 
     private void handleAppEntries(List<ApplicationsState.AppEntry> entries) {
         final ArrayList<String> sections = new ArrayList<String>();
@@ -193,8 +185,7 @@ public class ThermalSettingsFragment extends PreferenceFragment
                 sectionIndex = label.substring(0, 1).toUpperCase();
             }
 
-            if (lastSectionIndex == null ||
-                    !TextUtils.equals(sectionIndex, lastSectionIndex)) {
+            if (lastSectionIndex == null || !TextUtils.equals(sectionIndex, lastSectionIndex)) {
                 sections.add(sectionIndex);
                 positions.add(offset);
                 lastSectionIndex = sectionIndex;
@@ -255,10 +246,11 @@ public class ThermalSettingsFragment extends PreferenceFragment
     }
 
     private static class ModeAdapter extends BaseAdapter {
-
         private final LayoutInflater inflater;
         private final TypedValue textColorSecondary;
         private final int textColor;
+
+        // clang-format off
         private final int[] items = {
                 R.string.thermal_default,
                 R.string.thermal_benchmark,
@@ -268,13 +260,14 @@ public class ThermalSettingsFragment extends PreferenceFragment
                 R.string.thermal_gaming,
                 R.string.thermal_streaming
         };
+        // clang-format on
 
         private ModeAdapter(Context context) {
             inflater = LayoutInflater.from(context);
 
             textColorSecondary = new TypedValue();
-            context.getTheme().resolveAttribute(com.android.internal.R.attr.textColorSecondary,
-                    textColorSecondary, true);
+            context.getTheme().resolveAttribute(
+                    com.android.internal.R.attr.textColorSecondary, textColorSecondary, true);
             textColor = context.getColor(textColorSecondary.resourceId);
         }
 
@@ -299,8 +292,8 @@ public class ThermalSettingsFragment extends PreferenceFragment
             if (convertView != null) {
                 view = (TextView) convertView;
             } else {
-                view = (TextView) inflater.inflate(android.R.layout.simple_spinner_dropdown_item,
-                        parent, false);
+                view = (TextView) inflater.inflate(
+                        android.R.layout.simple_spinner_dropdown_item, parent, false);
             }
 
             view.setText(items[position]);
@@ -311,9 +304,8 @@ public class ThermalSettingsFragment extends PreferenceFragment
         }
     }
 
-    private class AllPackagesAdapter extends BaseAdapter
-            implements AdapterView.OnItemSelectedListener, SectionIndexer {
-
+    private class AllPackagesAdapter
+            extends BaseAdapter implements AdapterView.OnItemSelectedListener, SectionIndexer {
         private final LayoutInflater mInflater;
         private final ModeAdapter mModesAdapter;
         private List<ApplicationsState.AppEntry> mEntries = new ArrayList<>();
@@ -350,8 +342,8 @@ public class ThermalSettingsFragment extends PreferenceFragment
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder;
             if (convertView == null) {
-                holder = new ViewHolder(mInflater.inflate(
-                        R.layout.thermal_list_item, parent, false));
+                holder = new ViewHolder(
+                        mInflater.inflate(R.layout.thermal_list_item, parent, false));
                 holder.mode.setAdapter(mModesAdapter);
                 holder.mode.setOnItemSelectedListener(this);
             } else {
@@ -382,8 +374,8 @@ public class ThermalSettingsFragment extends PreferenceFragment
             holder.title.setText(entry.label);
             mApplicationsState.ensureIcon(entry);
             holder.icon.setImageDrawable(entry.icon);
-            holder.mode.setSelection(mThermalUtils.getStateForPackage(entry.info.packageName),
-                    false);
+            holder.mode.setSelection(
+                    mThermalUtils.getStateForPackage(entry.info.packageName), false);
             holder.mode.setTag(entry);
             int stateIconDawable = getStateDrawable(mThermalUtils.getStateForPackage(
                     entry.info.packageName));
@@ -397,8 +389,8 @@ public class ThermalSettingsFragment extends PreferenceFragment
             return holder.rootView;
         }
 
-        private void setEntries(List<ApplicationsState.AppEntry> entries,
-                List<String> sections, List<Integer> positions) {
+        private void setEntries(List<ApplicationsState.AppEntry> entries, List<String> sections,
+                List<Integer> positions) {
             mEntries = entries;
             mSections = sections.toArray(new String[sections.size()]);
             mPositions = new int[positions.size()];
@@ -408,7 +400,6 @@ public class ThermalSettingsFragment extends PreferenceFragment
             notifyDataSetChanged();
         }
 
-
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             final ApplicationsState.AppEntry entry = (ApplicationsState.AppEntry) parent.getTag();
@@ -417,8 +408,8 @@ public class ThermalSettingsFragment extends PreferenceFragment
                     mThermalUtils.writePackage(entry.info.packageName, ThermalUtils.STATE_DEFAULT);
                     break;
                 case ThermalUtils.STATE_BENCHMARK:
-                    mThermalUtils.writePackage(entry.info.packageName,
-                            ThermalUtils.STATE_BENCHMARK);
+                    mThermalUtils.writePackage(
+                            entry.info.packageName, ThermalUtils.STATE_BENCHMARK);
                     break;
                 case ThermalUtils.STATE_BROWSER:
                     mThermalUtils.writePackage(entry.info.packageName, ThermalUtils.STATE_BROWSER);
@@ -433,16 +424,15 @@ public class ThermalSettingsFragment extends PreferenceFragment
                     mThermalUtils.writePackage(entry.info.packageName, ThermalUtils.STATE_GAMING);
                     break;
                 case ThermalUtils.STATE_STREAMING:
-                    mThermalUtils.writePackage(entry.info.packageName,
-                            ThermalUtils.STATE_STREAMING);
+                    mThermalUtils.writePackage(
+                            entry.info.packageName, ThermalUtils.STATE_STREAMING);
                     break;
             }
             notifyDataSetChanged();
         }
 
         @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-        }
+        public void onNothingSelected(AdapterView<?> parent) {}
 
         @Override
         public int getPositionForSection(int section) {
@@ -479,7 +469,6 @@ public class ThermalSettingsFragment extends PreferenceFragment
     }
 
     private class ActivityFilter implements ApplicationsState.AppFilter {
-
         private final PackageManager mPackageManager;
         private final List<String> mLauncherResolveInfoList = new ArrayList<String>();
 
@@ -503,8 +492,7 @@ public class ThermalSettingsFragment extends PreferenceFragment
         }
 
         @Override
-        public void init() {
-        }
+        public void init() {}
 
         @Override
         public boolean filterApp(ApplicationsState.AppEntry entry) {

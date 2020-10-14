@@ -31,7 +31,6 @@ import android.os.RemoteException;
 import android.util.Log;
 
 public class ThermalService extends Service {
-
     private static final String TAG = "ThermalService";
     private static final boolean DEBUG = false;
 
@@ -62,7 +61,8 @@ public class ThermalService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (DEBUG) Log.d(TAG, "Starting service");
+        if (DEBUG)
+            Log.d(TAG, "Starting service");
         return START_STICKY;
     }
 
