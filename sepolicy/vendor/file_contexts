@@ -7,6 +7,9 @@
 # DC Dimming
 /sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable      u:object_r:sysfs_dm:s0
 
+# dpmd
+/(product|system/product)/bin/dpmd                                   u:object_r:vendor_dpmd_exec:s0
+
 # Fingerprint
 /dev/goodix_fp                                                       u:object_r:fingerprint_device:s0
 /data/vendor/goodix(/.*)?                                            u:object_r:fingerprint_data_file:s0
