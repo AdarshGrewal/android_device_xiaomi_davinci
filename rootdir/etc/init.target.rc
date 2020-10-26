@@ -82,6 +82,10 @@ on boot
 
     chown system system /sys/class/thermal/thermal_message/sconfig
 
+    # Allow system to modify exposure adjustment state
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable
+
 on property:sys.boot_completed=1
     write /dev/stune/top-app/schedtune.colocate 0
     write /dev/stune/foreground/schedtune.prefer_idle 1
