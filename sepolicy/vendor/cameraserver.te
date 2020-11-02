@@ -1,3 +1,4 @@
 allow cameraserver app_data_file:file { read };
+allow cameraserver default_android_service:service_manager { find };
 
 hal_client_domain(cameraserver, hal_motor)
