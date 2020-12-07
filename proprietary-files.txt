@@ -530,7 +530,7 @@ system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/vendor.qti.diaghal@1.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
--system_ext/priv-app/ims/ims.apk
+-system_ext/priv-app/ims/ims.apk|8054ef2e7f6d18e41afc6921d77a956af94d4b8f
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
 vendor/bin/imsrcsd
