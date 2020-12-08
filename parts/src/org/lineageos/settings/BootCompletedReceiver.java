@@ -42,11 +42,11 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG)
             Log.d(TAG, "Received boot completed intent");
 
-        KcalUtils.writeCurrentSettings(sharedPrefs);
-
         DozeUtils.checkDozeService(context);
         PopupCameraUtils.startService(context);
         ThermalUtils.startService(context);
         DcDimmingUtils.startService(context);
+        if (KcalUtils.isKcalSupported())
+            KcalUtils.writeCurrentSettings(sharedPrefs);
     }
 }
