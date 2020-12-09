@@ -28,6 +28,7 @@ TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_INCLUDE_WIFI_EXT := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
+EXTRA_FOD_ANIMATIONS := true
 $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
 PRODUCT_NAME := evolution_davinci
