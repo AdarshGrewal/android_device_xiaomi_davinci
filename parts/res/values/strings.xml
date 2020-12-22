@@ -61,4 +61,23 @@
     <string name="touch_sensitivity_summary">Controls touch sensitivity for repeated taps</string>
     <string name="touch_resistant_title">Touch-resistant area</string>
     <string name="touch_resistant_summary">Reduce touch sensitivity near the edges to avoid triggering touch controls</string>
+
+    <!-- DC Dimming -->
+    <string name="dc_dimming_enable">Enable DC Dimming</string>
+    <string name="dc_dimming_title">DC Dimming</string>
+    <string name="dc_dimming_summary">Reduces eye strain in low light conditions</string>
+    <string name="dc_dimming_summary_on">Enabled</string>
+    <string name="dc_dimming_summary_off">Disabled</string>
+    <string name="dc_dimming_info">Reduces eye strain in low light conditions but may result in reduced image quality and poor color production.</string>
+    <string name="dc_dimming_auto_mode_title">Schedule</string>
+    <string name="dc_dimming_mode_never">None</string>
+    <string name="dc_dimming_mode_time">Turn on at the specified time</string>
+    <string name="dc_dimming_mode_brightness">Turn on when brightness is below the threshold</string>
+    <string name="dc_dimming_mode_full">Dependent on time and brightness</string>
+    <string name="dc_dimming_brightness_title">Brightness threshold</string>
+    <string name="dc_dimming_brightness_info">Only activate DC Dimming when the average brightness is below the threshold</string>
+    <string name="dc_dimming_off_auto_mode_auto">Will turn on automatically</string>
+    <string name="dc_dimming_on_auto_mode_auto">Will turn off automatically</string>
+    <string name="dc_dimming_start_time">Start time</string>
+    <string name="dc_dimming_end_time">End time</string>
 </resources>

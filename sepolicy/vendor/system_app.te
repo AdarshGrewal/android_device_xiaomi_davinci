@@ -10,3 +10,5 @@ allow system_app { motor_device vendor_sysfs_graphics hall_device }:chr_file rw_
 binder_call(system_app, hal_touchfeature_default)
 
 allow system_app hal_touchfeature_hwservice_xiaomi:hwservice_manager find;
+
+allow system_app sysfs_dm:file rw_file_perms;
