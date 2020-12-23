@@ -4,9 +4,6 @@
 # Camera
 /mnt/vendor/persist/camera(/.*)?                                     u:object_r:camera_persist_file:s0
 
-# DC Dimming
-/sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable      u:object_r:sysfs_dm:s0
-
 # dpmd
 /(product|system/product)/bin/dpmd                                   u:object_r:vendor_dpmd_exec:s0
 
